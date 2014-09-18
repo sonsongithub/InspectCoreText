@@ -42,8 +42,9 @@
 	
 	NSString *string = [[NSString alloc] initWithCharacters:[data bytes] length:[data length]/sizeof(unichar)];
 	
+	string = @"hoge\na";
 	
-	CGFloat fontSize = 14;
+	CGFloat fontSize = 20;
 	
 	NSParagraphStyle *paragraphStyle = [NSParagraphStyle defaultParagraphStyleWithFontSize:fontSize];
 	NSDictionary *attributes = @{NSParagraphStyleAttributeName:paragraphStyle, NSFontAttributeName:[UIFont systemFontOfSize:fontSize]};

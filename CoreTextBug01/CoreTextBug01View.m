@@ -35,8 +35,10 @@
 - (void)drawRect:(CGRect)rect {
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
+	
 	[[UIColor blueColor] setFill];
 	CGContextFillRect(context, _contentRect);
+	[self drawStringRectForDebug];
 	
 	CGContextTranslateCTM(context, 0, 0);
 
@@ -56,6 +58,59 @@
 	CTFrameDraw(_frame, context);
 	CGContextRestoreGState(context);
 #endif
+}
+
+- (float)getSizeRestrictly {
+	CFArrayRef lines = CTFrameGetLines(_frame);
+	CFIndex lineCount = CFArrayGetCount(lines);
+	CGPoint lineOrigins[lineCount];
+	CTFrameGetLineOrigins(_frame, CFRangeMake(0, 0), lineOrigins);
+	
+	CGFloat height = 0;
+	
+	for (NSInteger index = 0; index < lineCount; index++) {
+		CGPoint origin = lineOrigins[index];
+		CTLineRef line = CFArrayGetValueAtIndex(lines, index);
+		
+		CGFloat ascent;
+		CGFloat descent;
+		CGFloat leading;
+		CGFloat width = CTLineGetTypographicBounds(line, &ascent, &descent, &leading);
+		
+		CGRect lineRect = CGRectMake(origin.x,
+									 ceilf(origin.y - descent),
+									 width,
+									 ceilf(ascent + descent));
+		height = (lineRect.origin.y + lineRect.size.height);
+		return height;
+	}
+	return height;
+}
+
+- (void)drawStringRectForDebug {
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	
+	CFArrayRef lines = CTFrameGetLines(_frame);
+	CFIndex lineCount = CFArrayGetCount(lines);
+	CGPoint lineOrigins[lineCount];
+	CTFrameGetLineOrigins(_frame, CFRangeMake(0, 0), lineOrigins);
+	
+	for (NSInteger index = 0; index < lineCount; index++) {
+		CGPoint origin = lineOrigins[index];
+		CTLineRef line = CFArrayGetValueAtIndex(lines, index);
+		
+		CGFloat ascent;
+		CGFloat descent;
+		CGFloat leading;
+		CGFloat width = CTLineGetTypographicBounds(line, &ascent, &descent, &leading);
+		
+		CGRect lineRect = CGRectMake(origin.x,
+									 ceilf(origin.y - descent),
+									 width,
+									 ceilf(ascent + descent));
+		lineRect.origin.y = _contentRect.size.height - CGRectGetMaxY(lineRect);
+		CGContextStrokeRect(context, lineRect);
+	}
 }
 
 - (void)update {
@@ -80,6 +135,9 @@
 																	NULL,
 																	CGSizeMake(width, CGFLOAT_MAX),
 																	NULL);
+	
+//	frameSize.width += 10;
+	
 	_contentRect = CGRectZero;
 	_contentRect.size = frameSize;
 
@@ -91,6 +149,8 @@
 	CGPathAddRect(path, NULL, _contentRect);
 	_frame = CTFramesetterCreateFrame(_framesetter, CFRangeMake(0, 0), path, NULL);
 	CGPathRelease(path);
+	
+	_contentRect.size.height = [self getSizeRestrictly];
 	
 	[self setNeedsDisplay];
 }
