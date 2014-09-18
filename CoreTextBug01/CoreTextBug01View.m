@@ -10,6 +10,14 @@
 
 #import <CoreText/CoreText.h>
 
+#define	DNSLog(...)		NSLog(__VA_ARGS__);
+#define DNSLogMethod	NSLog(@"[%s] %@", class_getName([self class]), NSStringFromSelector(_cmd));
+#define DNSLogPoint(p)	NSLog(@"%f,%f", p.x, p.y);
+#define DNSLogSize(p)	NSLog(@"%f,%f", p.width, p.height);
+#define DNSLogRect(p)	NSLog(@"%f,%f %f,%f", p.origin.x, p.origin.y, p.size.width, p.size.height);
+#define DNSLogEdgeInsets(p)	NSLog(@"%f,%f %f,%f", p.top, p.left, p.bottom, p.right);
+#define DNSLogMainThread if ([NSThread isMainThread]){NSLog(@"This is the main thread.");}else{NSLog(@"This is a sub thread.");}
+
 #define SAFE_CFRELEASE(p) if(p){CFRelease(p);p=NULL;}
 
 @interface CoreTextBug01View() {
@@ -27,17 +35,27 @@
 - (void)drawRect:(CGRect)rect {
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
-	CGContextTranslateCTM(context, 0, 0);
+	[[UIColor blueColor] setFill];
+	CGContextFillRect(context, _contentRect);
 	
+	CGContextTranslateCTM(context, 0, 0);
+
 	// draw text
+#if 1
 	CGContextSaveGState(context);
 	CGContextTranslateCTM(context, 0, _contentRect.size.height);
 	CGContextScaleCTM(context, 1.0, -1.0);
 	CGContextSetTextMatrix(context, CGAffineTransformIdentity);
 	CTFrameDraw(_frame, context);
 	CGContextRestoreGState(context);
-	
-	
+#else
+	CGContextSaveGState(context);
+	CGContextTranslateCTM(context, 0, self.frame.size.height);
+	CGContextScaleCTM(context, 1.0, -1.0);
+	CGContextSetTextMatrix(context, CGAffineTransformIdentity);
+	CTFrameDraw(_frame, context);
+	CGContextRestoreGState(context);
+#endif
 }
 
 - (void)update {
@@ -64,8 +82,12 @@
 																	NULL);
 	_contentRect = CGRectZero;
 	_contentRect.size = frameSize;
+
+	DNSLogSize(frameSize);
+	DNSLogRect(self.bounds);
 	
 	CGMutablePathRef path = CGPathCreateMutable();
+//	CGPathAddRect(path, NULL, self.bounds);
 	CGPathAddRect(path, NULL, _contentRect);
 	_frame = CTFramesetterCreateFrame(_framesetter, CFRangeMake(0, 0), path, NULL);
 	CGPathRelease(path);
