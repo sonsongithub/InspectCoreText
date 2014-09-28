@@ -140,6 +140,7 @@
 	
 	_contentRect = CGRectZero;
 	_contentRect.size = frameSize;
+	_contentRect.size.width = self.frame.size.width;
 
 	DNSLogSize(frameSize);
 	DNSLogRect(self.bounds);
@@ -149,8 +150,6 @@
 	CGPathAddRect(path, NULL, _contentRect);
 	_frame = CTFramesetterCreateFrame(_framesetter, CFRangeMake(0, 0), path, NULL);
 	CGPathRelease(path);
-	
-	_contentRect.size.height = [self getSizeRestrictly];
 	
 	[self setNeedsDisplay];
 }

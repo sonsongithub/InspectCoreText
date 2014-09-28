@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6246" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6239"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,23 +16,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7P2-P7-p6W" customClass="CoreTextBug01View">
-                                <rect key="frame" x="140" y="200" width="320" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7P2-P7-p6W" customClass="TestView">
+                                <rect key="frame" x="220" y="28" width="160" height="160"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="U9b-EV-fh8"/>
-                                    <constraint firstAttribute="height" constant="200" id="d6c-eJ-4iv"/>
+                                    <constraint firstAttribute="width" constant="160" id="U9b-EV-fh8"/>
+                                    <constraint firstAttribute="height" constant="160" id="d6c-eJ-4iv"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5c5-Y5-m85" customClass="InspectTestView">
+                                <rect key="frame" x="220" y="420" width="160" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="9ev-lP-4vr"/>
+                                    <constraint firstAttribute="width" constant="160" id="ckE-JR-oQp"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfe-SW-ETe" customClass="BadTestView">
+                                <rect key="frame" x="220" y="220" width="160" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="LTS-K9-51h"/>
+                                    <constraint firstAttribute="height" constant="160" id="awZ-ag-VWU"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="good" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRE-8r-Dae">
+                                <rect key="frame" x="172" y="97" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bad" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wI-no-Jah">
+                                <rect key="frame" x="182" y="289" width="30" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBw-sD-Glk">
+                                <rect key="frame" x="170" y="489" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.57230681179999998" green="0.57230681179999998" blue="0.57230681179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="7P2-P7-p6W" secondAttribute="centerY" id="Eaq-Zo-KJ9"/>
+                            <constraint firstItem="5c5-Y5-m85" firstAttribute="centerY" secondItem="lBw-sD-Glk" secondAttribute="centerY" id="2Qh-xQ-2jN"/>
+                            <constraint firstAttribute="centerY" secondItem="lfe-SW-ETe" secondAttribute="centerY" id="BUB-pU-6UN"/>
+                            <constraint firstItem="mRE-8r-Dae" firstAttribute="centerY" secondItem="7P2-P7-p6W" secondAttribute="centerY" id="Ccd-Zd-hZJ"/>
+                            <constraint firstAttribute="centerY" secondItem="7P2-P7-p6W" secondAttribute="centerY" constant="192" id="Eaq-Zo-KJ9"/>
+                            <constraint firstItem="lfe-SW-ETe" firstAttribute="leading" secondItem="8wI-no-Jah" secondAttribute="trailing" constant="8" id="Lfl-ML-E0Z"/>
+                            <constraint firstAttribute="centerX" secondItem="5c5-Y5-m85" secondAttribute="centerX" id="R9t-xI-e4I"/>
+                            <constraint firstAttribute="centerX" secondItem="lfe-SW-ETe" secondAttribute="centerX" id="VUJ-HB-6pd"/>
+                            <constraint firstItem="lfe-SW-ETe" firstAttribute="centerY" secondItem="8wI-no-Jah" secondAttribute="centerY" id="YRf-60-NLI"/>
+                            <constraint firstItem="5c5-Y5-m85" firstAttribute="leading" secondItem="lBw-sD-Glk" secondAttribute="trailing" constant="8" id="Zyt-KC-vwL"/>
+                            <constraint firstAttribute="centerY" secondItem="5c5-Y5-m85" secondAttribute="centerY" constant="-200" id="kM3-6u-KZ6"/>
                             <constraint firstAttribute="centerX" secondItem="7P2-P7-p6W" secondAttribute="centerX" id="nyp-vG-JiU"/>
+                            <constraint firstItem="7P2-P7-p6W" firstAttribute="leading" secondItem="mRE-8r-Dae" secondAttribute="trailing" constant="8" id="q1Y-1J-3hK"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="_textView" destination="7P2-P7-p6W" id="8em-DN-ilB"/>
+                        <outlet property="_bad" destination="lfe-SW-ETe" id="ncd-aL-eV4"/>
+                        <outlet property="_good" destination="7P2-P7-p6W" id="lKa-Ut-pag"/>
+                        <outlet property="_test" destination="5c5-Y5-m85" id="kda-KX-tC2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

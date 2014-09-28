@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CoreTextBug01View.h"
+#import "TestView.h"
 
 @implementation NSParagraphStyle (ViewController)
 
@@ -27,7 +28,9 @@
 @end
 
 @interface ViewController () {
-	IBOutlet CoreTextBug01View *_textView;
+	IBOutlet TestView *_good;
+	IBOutlet TestView *_bad;
+	IBOutlet TestView *_test;
 }
 @end
 
@@ -42,15 +45,22 @@
 	
 	NSString *string = [[NSString alloc] initWithCharacters:[data bytes] length:[data length]/sizeof(unichar)];
 	
-	string = @"hoge\na";
+//	string = @"hogaaaaaaaaaaaaaaeaaa                \na\nb";
+	string = @"abcdef  \ngh\n ";
 	
 	CGFloat fontSize = 20;
 	
 	NSParagraphStyle *paragraphStyle = [NSParagraphStyle defaultParagraphStyleWithFontSize:fontSize];
 	NSDictionary *attributes = @{NSParagraphStyleAttributeName:paragraphStyle, NSFontAttributeName:[UIFont systemFontOfSize:fontSize]};
 	
-	_textView.attributedString = [[NSAttributedString alloc] initWithString:string attributes:attributes];
-	[_textView update];
+	_bad.attributedString = [[NSAttributedString alloc] initWithString:string attributes:attributes];
+	[_bad update];
+	
+	_test.attributedString = [[NSAttributedString alloc] initWithString:string attributes:attributes];
+	[_test update];
+	
+	_good.attributedString = [[NSAttributedString alloc] initWithString:string attributes:attributes];
+	[_good update];
 }
 
 - (void)didReceiveMemoryWarning {

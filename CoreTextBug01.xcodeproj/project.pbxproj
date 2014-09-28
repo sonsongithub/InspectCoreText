@@ -17,6 +17,9 @@
 		1484422E19C560FD00649E0F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1484422C19C560FD00649E0F /* LaunchScreen.xib */; };
 		1484423A19C560FD00649E0F /* CoreTextBug01Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1484423919C560FD00649E0F /* CoreTextBug01Tests.m */; };
 		1484424519C5612500649E0F /* CoreTextBug01View.m in Sources */ = {isa = PBXBuildFile; fileRef = 1484424419C5612500649E0F /* CoreTextBug01View.m */; };
+		14E1A64A19D842F300A198A8 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1A64919D842F300A198A8 /* TestView.m */; };
+		14E1A64D19D844D000A198A8 /* BadTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1A64C19D844D000A198A8 /* BadTestView.m */; };
+		14E1A65019D844F500A198A8 /* InspectTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1A64F19D844F500A198A8 /* InspectTestView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,12 @@
 		1484423919C560FD00649E0F /* CoreTextBug01Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreTextBug01Tests.m; sourceTree = "<group>"; };
 		1484424319C5612500649E0F /* CoreTextBug01View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextBug01View.h; sourceTree = "<group>"; };
 		1484424419C5612500649E0F /* CoreTextBug01View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextBug01View.m; sourceTree = "<group>"; };
+		14E1A64819D842F300A198A8 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
+		14E1A64919D842F300A198A8 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
+		14E1A64B19D844D000A198A8 /* BadTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadTestView.h; sourceTree = "<group>"; };
+		14E1A64C19D844D000A198A8 /* BadTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadTestView.m; sourceTree = "<group>"; };
+		14E1A64E19D844F500A198A8 /* InspectTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectTestView.h; sourceTree = "<group>"; };
+		14E1A64F19D844F500A198A8 /* InspectTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectTestView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +97,12 @@
 		1484421C19C560FD00649E0F /* CoreTextBug01 */ = {
 			isa = PBXGroup;
 			children = (
+				14E1A64819D842F300A198A8 /* TestView.h */,
+				14E1A64919D842F300A198A8 /* TestView.m */,
+				14E1A64B19D844D000A198A8 /* BadTestView.h */,
+				14E1A64C19D844D000A198A8 /* BadTestView.m */,
+				14E1A64E19D844F500A198A8 /* InspectTestView.h */,
+				14E1A64F19D844F500A198A8 /* InspectTestView.m */,
 				140BD1B419CAC2F1001D0A6E /* bug_data_ipad.bin */,
 				140BD1B519CAC2F1001D0A6E /* bug_data.bin */,
 				1484424319C5612500649E0F /* CoreTextBug01View.h */,
@@ -234,6 +249,9 @@
 			files = (
 				1484422619C560FD00649E0F /* ViewController.m in Sources */,
 				1484422319C560FD00649E0F /* AppDelegate.m in Sources */,
+				14E1A64D19D844D000A198A8 /* BadTestView.m in Sources */,
+				14E1A64A19D842F300A198A8 /* TestView.m in Sources */,
+				14E1A65019D844F500A198A8 /* InspectTestView.m in Sources */,
 				1484424519C5612500649E0F /* CoreTextBug01View.m in Sources */,
 				1484422019C560FD00649E0F /* main.m in Sources */,
 			);
