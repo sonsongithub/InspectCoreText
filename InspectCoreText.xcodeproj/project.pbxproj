@@ -90,12 +90,12 @@
 		14E1A65C19D84A4700A198A8 /* InspectCoreText */ = {
 			isa = PBXGroup;
 			children = (
+				14E1A68719D84AFD00A198A8 /* TestView.h */,
+				14E1A68819D84AFD00A198A8 /* TestView.m */,
 				14E1A68319D84AFD00A198A8 /* BadTestView.h */,
 				14E1A68419D84AFD00A198A8 /* BadTestView.m */,
 				14E1A68519D84AFD00A198A8 /* InspectTestView.h */,
 				14E1A68619D84AFD00A198A8 /* InspectTestView.m */,
-				14E1A68719D84AFD00A198A8 /* TestView.h */,
-				14E1A68819D84AFD00A198A8 /* TestView.m */,
 				14E1A66119D84A4700A198A8 /* AppDelegate.h */,
 				14E1A66219D84A4700A198A8 /* AppDelegate.m */,
 				14E1A66419D84A4700A198A8 /* ViewController.h */,

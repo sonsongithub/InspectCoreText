@@ -39,7 +39,7 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	
-	NSString *string = @"abcdef  \ngh\n ";
+	NSString *string = @"abcdef  \ngh\n i";
 	
 	CGFloat fontSize = 20;
 	
@@ -47,13 +47,8 @@
 	NSDictionary *attributes = @{NSParagraphStyleAttributeName:paragraphStyle, NSFontAttributeName:[UIFont systemFontOfSize:fontSize]};
 	
 	_bad.attributedString = [[NSAttributedString alloc] initWithString:string attributes:attributes];
-	[_bad update];
-	
 	_test.attributedString = [[NSAttributedString alloc] initWithString:string attributes:attributes];
-	[_test update];
-	
 	_good.attributedString = [[NSAttributedString alloc] initWithString:string attributes:attributes];
-	[_good update];
 }
 
 - (void)didReceiveMemoryWarning {

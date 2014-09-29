@@ -39,15 +39,18 @@
 	}
 }
 
+- (void)setAttributedString:(NSAttributedString *)attributedString {
+	_attributedString = attributedString;
+	[self update];
+}
+
 - (void)drawRect:(CGRect)rect {
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
-	
+	// attribute
 	[[UIColor yellowColor] setFill];
 	CGContextFillRect(context, _contentRect);
 	[self drawStringRectForDebug];
-	
-	CGContextTranslateCTM(context, 0, 0);
 	
 	// draw text
 	CGContextSaveGState(context);
@@ -59,7 +62,6 @@
 }
 
 - (void)update {
-	// CoreText
 	SAFE_CFRELEASE(_framesetter);
 	SAFE_CFRELEASE(_frame);
 	
@@ -73,23 +75,17 @@
 		CFRelease(p);
 	}
 	
-	CGFloat width = self.frame.size.width;
-	
+	CGFloat constrainedWidth = self.frame.size.width;
 	CGSize frameSize = CTFramesetterSuggestFrameSizeWithConstraints(_framesetter,
 																	CFRangeMake(0, _attributedString.length),
 																	NULL,
-																	CGSizeMake(width, CGFLOAT_MAX),
+																	CGSizeMake(constrainedWidth, CGFLOAT_MAX),
 																	NULL);
-	
 	_contentRect = CGRectZero;
 	_contentRect.size = frameSize;
-	_contentRect.size.width = self.frame.size.width;
-	
-	DNSLogSize(frameSize);
-	DNSLogRect(self.bounds);
+	_contentRect.size.width = constrainedWidth;
 	
 	CGMutablePathRef path = CGPathCreateMutable();
-	//	CGPathAddRect(path, NULL, self.bounds);
 	CGPathAddRect(path, NULL, _contentRect);
 	_frame = CTFramesetterCreateFrame(_framesetter, CFRangeMake(0, 0), path, NULL);
 	CGPathRelease(path);
