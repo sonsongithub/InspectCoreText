@@ -86,6 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="267" y="-59"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lm4-vU-r6D">
@@ -98,18 +99,18 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="aS7-1i-Q4g"/>
                         <segue destination="3cC-F9-u9f" kind="relationship" relationship="viewControllers" id="kiS-bH-trB"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="VbS-8r-ohR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTi-nm-XTo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-449" y="335"/>
         </scene>
-        <!--Item-->
+        <!--LineBreakMode-->
         <scene sceneID="JSu-ZD-rGE">
             <objects>
-                <viewController id="3cC-F9-u9f" customClass="ViewController2" sceneMemberID="viewController">
+                <viewController title="LineBreakMode" id="3cC-F9-u9f" customClass="ViewController2" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YXZ-bU-CQU"/>
                         <viewControllerLayoutGuide type="bottom" id="Oij-qW-10M"/>
@@ -142,25 +143,30 @@
                                     <constraint firstAttribute="width" constant="160" id="gWE-TJ-pzn"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZf-QH-l93">
-                                <rect key="frame" x="139" y="158" width="95" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZf-QH-l93">
+                                <rect key="frame" x="139" y="151" width="95" height="43"/>
                                 <string key="text">NSLineBreak
-ByCharWrapping</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+ByCharWrapping
+Bad</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0X-eX-7I0">
-                                <rect key="frame" x="136" y="286" width="98" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0X-eX-7I0">
+                                <rect key="frame" x="136" y="279" width="98" height="43"/>
                                 <string key="text">NSLineBreak
-ByWordWrapping</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+ByWordWrapping
+Good</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="NSLineBreakByClipping" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaa-sn-zvm">
-                                <rect key="frame" x="139" y="413" width="95" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaa-sn-zvm">
+                                <rect key="frame" x="161" y="407" width="73" height="43"/>
+                                <string key="text">NSLineBreak
+ByClipping
+Good</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -181,7 +187,7 @@ ByWordWrapping</string>
                             <constraint firstAttribute="centerX" secondItem="oBD-xS-0TN" secondAttribute="centerX" constant="-22" id="iww-2I-JYr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Ehe-mI-qUU"/>
+                    <tabBarItem key="tabBarItem" title="LineBreakMode" id="Ehe-mI-qUU"/>
                     <connections>
                         <outlet property="_char" destination="oBD-xS-0TN" id="hi2-mE-WpH"/>
                         <outlet property="_other" destination="ENz-y4-1Ub" id="eI0-Jh-J1e"/>
@@ -190,7 +196,7 @@ ByWordWrapping</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1v-9Q-kgy" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="291" y="1084"/>
+            <point key="canvasLocation" x="267" y="636"/>
         </scene>
     </scenes>
 </document>
