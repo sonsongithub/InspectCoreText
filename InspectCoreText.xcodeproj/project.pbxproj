@@ -17,6 +17,7 @@
 		14E1A68919D84AFD00A198A8 /* BadTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1A68419D84AFD00A198A8 /* BadTestView.m */; };
 		14E1A68A19D84AFD00A198A8 /* InspectTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1A68619D84AFD00A198A8 /* InspectTestView.m */; };
 		14E1A68B19D84AFD00A198A8 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E1A68819D84AFD00A198A8 /* TestView.m */; };
+		14F84D5519DA42B80043A28E /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F84D5419DA42B80043A28E /* ViewController2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		14E1A68619D84AFD00A198A8 /* InspectTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectTestView.m; sourceTree = "<group>"; };
 		14E1A68719D84AFD00A198A8 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		14E1A68819D84AFD00A198A8 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
+		14F84D5319DA42B80043A28E /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		14F84D5419DA42B80043A28E /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,8 @@
 				14E1A66219D84A4700A198A8 /* AppDelegate.m */,
 				14E1A66419D84A4700A198A8 /* ViewController.h */,
 				14E1A66519D84A4700A198A8 /* ViewController.m */,
+				14F84D5319DA42B80043A28E /* ViewController2.h */,
+				14F84D5419DA42B80043A28E /* ViewController2.m */,
 				14E1A66719D84A4700A198A8 /* Main.storyboard */,
 				14E1A66A19D84A4700A198A8 /* Images.xcassets */,
 				14E1A66C19D84A4700A198A8 /* LaunchScreen.xib */,
@@ -234,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F84D5519DA42B80043A28E /* ViewController2.m in Sources */,
 				14E1A66619D84A4700A198A8 /* ViewController.m in Sources */,
 				14E1A66319D84A4700A198A8 /* AppDelegate.m in Sources */,
 				14E1A68919D84AFD00A198A8 /* BadTestView.m in Sources */,
