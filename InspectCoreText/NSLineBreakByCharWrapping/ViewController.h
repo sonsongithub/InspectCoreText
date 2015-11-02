@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  ViewController.h
 //  CoreTextBug01
 //
 //  Created by sonson on 2014/09/14.
@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface NSLineBreakByCharWrappingViewController : UIViewController
 
 
 @end

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController2 : UIViewController
+@interface NSLineBreakByCharWrappingViewController2 : UIViewController
 
 @end

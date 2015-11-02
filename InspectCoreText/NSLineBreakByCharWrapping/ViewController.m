@@ -26,14 +26,14 @@
 
 @end
 
-@interface ViewController () {
+@interface NSLineBreakByCharWrappingViewController () {
 	IBOutlet TestView *_good;
 	IBOutlet TestView *_bad;
 	IBOutlet TestView *_test;
 }
 @end
 
-@implementation ViewController
+@implementation NSLineBreakByCharWrappingViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];

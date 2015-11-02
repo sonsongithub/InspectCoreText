@@ -26,14 +26,14 @@
 
 @end
 
-@interface ViewController2 () {
+@interface NSLineBreakByCharWrappingViewController2 () {
 	IBOutlet TestView *_char;
 	IBOutlet TestView *_word;
 	IBOutlet TestView *_other;
 }
 @end
 
-@implementation ViewController2
+@implementation NSLineBreakByCharWrappingViewController2
 
 - (void)viewDidLoad {
     [super viewDidLoad];
