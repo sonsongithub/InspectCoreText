@@ -1,5 +1,5 @@
-You get a strange result when you set the font which is got by UIFont.systemOfSize.
-You may be able to get a good result when you set the font which is got by specifying the font-family-name.
+The result which is rendered by `UIFont.systemFontOfSize(12)` is different from by `UIFont(name: UIFont.systemFontOfSize(12).fontName, size:12)`.
+Why...?
 
-<img src="https://cloud.githubusercontent.com/assets/33768/10885992/6ffb99ba-81c3-11e5-99db-8721cd3186df.png" width="360">
-<img src="https://cloud.githubusercontent.com/assets/33768/10885996/76ae2aca-81c3-11e5-9718-24473542423c.png" width="360">
+<img src="https://cloud.githubusercontent.com/assets/33768/10902957/7fe7abe6-8247-11e5-9817-fdf2a8e3f21d.png" width="360">
+<img src="https://cloud.githubusercontent.com/assets/33768/10902958/7fe91a3a-8247-11e5-834c-e330df8b1bfd.png" width="360">
