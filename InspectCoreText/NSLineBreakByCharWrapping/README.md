@@ -1,6 +1,3 @@
-InspectCoreText
-===========
-
 CTFramesetterSuggestFrameSizeWithConstraints skips white space at the end of lines.
 NSAttributeString which includes NSLineBreakByCharWrapping as attributes is not rendered by CTFrameDraw according to frame which is estimated by CTFramesetterSuggestFrameSizeWithConstraints.
 
