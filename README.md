@@ -1,6 +1,7 @@
 InspectCoreText
 ===========
 
-CTFramesetterSuggestFrameSizeWithConstraints skips white space at the end of lines.
+This application shows the list of bugs of CoreText.
 
-![image](https://raw.githubusercontent.com/sonsongithub/InspectCoreText/master/sample.png)
+1. [Layout using NSLineBreakByCharWrapping](https://github.com/sonsongithub/InspectCoreText/tree/master/InspectCoreText/NSLineBreakByCharWrapping)
+2. [Draw CTFrame using font which is got by systemFontOfSize](https://github.com/sonsongithub/InspectCoreText/tree/master/InspectCoreText/systemFontOfSize)
