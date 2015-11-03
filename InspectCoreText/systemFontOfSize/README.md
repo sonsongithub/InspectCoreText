@@ -1,6 +1,3 @@
-InspectCoreText
-===========
-
 You get a strange result when you set the font which is got by UIFont.systemOfSize.
 You may be able to get a good result when you set the font which is got by specifying the font-family-name.
 
